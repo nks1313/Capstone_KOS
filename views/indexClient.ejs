@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<% include ./index_header.ejs %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="public/css/hostAndClient.css" />
+    <style></style>
+    <script src="public/js/jquery-3.1.1.min.js"></script>
+    <script src="public/js/math.min.js"></script>
+		<script src="public/js/Box2D.js"></script>
+    <script src="public/js/gwModule.js"></script>
+    <script src="public/js/hostAndClient.js"></script>
+
+    <script>
+       $(document).ready( function() {
+				// alert("kkkk");
+          hC.init_nonHostClients();
+          gW.adjustSizeOfChatDiv('normal');
+       });
+    </script>
+
+    <!--
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    -->
+    <script src="public/js/adapter-latest.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<% include ./header.ejs %>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1>EOS 기반 클라우드 게이밍 플랫폼</h1>
+					<p>저사양 컴퓨터로 고사양 게임을 즐겨보세요!<br/>
+						<div id="menu2">
+							<ul>
+								<li><a href="/" accesskey="1" title="">Homepage</a></li>
+								<li class="current_page_item"><a href="game" accesskey="4" title="">GAME</a></li>
+								<li><a href="login" accesskey="2" title="">로그인</a></li>
+								<li><a href="signup" accesskey="3" title="">회원가입</a></li>
+							</ul>
+						</div>
+					</p>
+				</div>
+
+				<video autoplay loop muted playsinline src="images/battle.mp4"></video>
+			</section>
+
+
+		<!-- Highlights -->
+    <div class="main">
+       <div class="containerRow" style = "text-align: center ; display : grid" >
+
+          <div class="maintext" id="multiPlayer" style="display:table-cell; margin-left : 35%">
+             <div class="scroller">
+                <datalist id="nodeServerList"></datalist>
+                <span id="serverTitle">Server</span><input id="nodeServer" list="nodeServerList" value='timetocode.herokuapp.com' title='Use the default unless you have an ip address (and port) for a local node server.'>
+                <span id="roomTitle">Room</span><input style="width:110px" id="roomName">
+                <button id="ConnectButton" style="height:50px" class="chat" onclick="hC.connect_and_listen('client', 'normal');" title='Initiate (or reset) the client connection.'>Connect</button>
+                </br>
+                <form id="chatForm" action="" style="display:none;">
+                   <input id="inputField" autocomplete="off" title="Use the 'Enter' key or click the button to submit a message."/>
+                   <button disabled id="ChatButton" class="chat" value="연결">Chat</button>
+                </form>
+              </br>
+                <canvas id="connectionCanvas" onclick="document.activeElement.blur();"></canvas><br>
+
+                <div style="display:row; font-size: 1.0em; margin-bottom: 10px; margin-top: 5px;">
+                   <div style="display:none;">
+                      <input type="checkbox" id="chkPlayer" autocomplete="off" title="Request a Puck-Popper player when connecting.">Player<br>
+                      <input type="checkbox" id="chkLocalCursor" autocomplete="off" title="Render the local cursor when over the video element">Local cursor
+                   </div>
+                   <div style="display:inline-block;">
+                      <input disabled type="checkbox" id="chkRequestStream" autocomplete="off" title="Request a video stream (or shut it off)."><span id='streamChkDesc'>Stream</span>
+                      <button disabled class="clientLastRow" id="FullScreen" title='View video element (the stream) in full-screen mode.'>Full Screen</button><br><br>
+                   </div>
+                   <div style="display:none; float:right">
+                      <button disabled class="clientLastRow" id="twoThumbsButton" title='Multi-touch interface controlled with two thumbs'>Two Thumbs</button>
+                   </div>
+                </div>
+
+
+             </div>
+          </div>
+
+          <!-- A placeholder, mainly to keep things similar to the host page. -->
+          <div class="maintext" id="ttcIntro" style="display:none">
+          </div>
+
+          <!-- The display elements -->
+          <div class="clientVideo">
+             <video autoplay id="videoMirror" onclick="document.activeElement.blur();"></video>
+             <canvas hidden id="twoThumbsCanvas" onclick="document.activeElement.blur();"></canvas>
+          </div>
+
+
+          <script type="text/javascript">
+            var videoM = document.getElementById("videoMirror");
+            var cavansT = document.getElementById("twoThumbsCanvas");
+            videoM.width = screen.width * 7 / 10;
+            videoM.height = screen.height * 7 / 10;
+            canvasT.width = screen.width * 7 / 10;
+            canvasT.height = screen.height * 7 / 10;
+         </script>
+
+
+          <!-- Hidden control that is sometimes used in testing... -->
+          <div class="controls" id="controlsDiv">
+             <span hidden><input type="checkbox" id="chkTwoThumbs" autocomplete="off" title="Multi-touch interface controlled by two thumbs">Two Thumbs<br></span>
+          </div>
+
+       </div>
+    </div>
+
+	<!-- Footer -->
+	<% include ./footer.ejs %>
+
+	<!-- Scripts -->
+	<% include ./scripts.ejs %>
+
+	</body>
+</html>

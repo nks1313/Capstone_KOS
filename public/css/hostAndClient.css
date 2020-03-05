@@ -1,0 +1,325 @@
+﻿
+/* Disable page selection. This stops accidental selection behavior
+   when the cursor is dragged off the canvas. */
+body {
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#serverTitle {
+   font-size: 0.9em;
+   width: 3.0em;
+   display: inline-block;
+   text-align: right;
+}
+#roomTitle {
+   font-size: 0.9em;
+   width: 3.2em;
+   display: inline-block;
+   text-align: right;
+}
+
+/* Multiplayer Interface (note the width of these input fields is set by adjustSizeOfChatDiv in gwModule.js) */
+#inputField { height: 20px; margin:      0.00em; padding: 0;}
+#nodeServer { height: 20px; margin-left: 0.25em; padding: 0;}
+#roomName   { height: 20px; margin-left: 0.25em; padding: 0; border: 2px solid red;}
+
+#jsonCapture { height: 30px; width: 150px;
+               margin-bottom: 0px; margin-top: 2px; margin-left: 2px;
+               padding: 0;
+               background-color: #f4f3f1;
+               white-space: pre;
+               overflow-wrap: normal;
+               overflow-x: scroll;}
+
+#messages    { list-style-type: none; margin: 0; padding: 0;        font: 0.9em Helvetica, Arial, sans-serif; }
+#messages li {                                   padding: 5px 10px; border: 1px solid #d9d9d9;}
+/*
+#messages li:nth-child(odd) { background: #d9d9d9;}
+*/
+
+/* Table for score summary (without an outer border). */
+table.score {
+   border-collapse: collapse;
+   border-style: hidden;
+}
+td.scoreHeader {
+   text-align: center;
+   font-size: 100%;
+   padding: 1px 2px;
+   border-bottom: 2px solid brown;
+   border-left:   1px solid brown;
+   border-right:  1px solid brown;
+}
+td.score {
+   font-size: 100%;
+   padding: 1px 2px;
+   border: 1px solid brown;
+}
+td.leaderboardHeader {
+   text-align: center;
+   font-size: 95%;
+   padding: 1px 2px;
+   border-bottom: 2px solid brown;
+   border-left:   1px solid brown;
+   border-right:  1px solid brown;
+}
+td.leaderboardScore {
+   /* vertical 0px */
+   font-size: 95%;
+   padding: 1px 2px;
+   border: 1px solid brown;
+}
+td.leaderboardIndex {
+   font-size: 70%;
+   padding: 1px 2px;
+   border: 1px solid brown;
+}
+td.leaderboardName {
+   font-size: 85%;
+   padding: 1px 2px;
+   border: 1px solid brown;
+}
+
+br.score {
+   display: block;     /* makes it have a width */
+   content: "";        /* clears default height */
+   margin-bottom: 9px; /* here's where you dial the bottom gap */
+}
+
+/* Outline with the demo details */
+#outline1 {
+   margin: 0px;
+   padding: 0px 0px 0px 20px;
+}
+#outline1 li {
+}
+
+
+p.title {
+   color:gray; /* #5d8989 #008080 */
+   text-align: center;
+   font-size: 175%;
+   font-weight: bold;
+   margin-top:    20px;
+   margin-bottom: 10px;  /* 27 */
+}
+
+#browserAdvice {
+   color:gray; /* #5d8989 #008080 */
+   text-align:center;
+   font-size: 80%;
+   margin-top:    0px;
+   margin-bottom: 0px;
+}
+
+/*body, p {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 100%;
+   background-color: #f4f3f1; 
+}*/
+
+#mainDiv {
+   font-family: Helvetica, Arial, sans-serif;
+   font-size: 16px;
+
+   display: table;
+   margin-left: 1.5625em;
+   max-width:  87.5em;
+}
+
+div.containerRow {
+   display: row;
+}
+
+div.maintext {
+   /*
+   Extend this div presence down the page so the mouse behavior, related to
+   drag-over-the-boundary events, are inhibited.
+   */
+   min-width: 33.75em;
+   max-width: 33.75em;
+
+   padding-left:   0.3125em;
+   padding-right:  0.6250em;
+
+   display: table-cell;
+   vertical-align: top;
+
+   text-align: justify;
+}
+#multiPlayer {
+}
+
+div.clientVideo {
+   display: table-cell;
+   vertical-align: top;
+}
+div.canvas {
+   display: table-cell;
+   vertical-align: top;
+}
+
+div.controls {
+   min-width: 140px;
+   max-width: 160px;
+   display: table-cell;
+   vertical-align: top;
+}
+
+/* necessary inner div to make the left panel scroll */
+div.scroller {
+   overflow-y: scroll;
+   padding-right: 0.625em;
+}
+
+#editGuide {
+   font-size:  smaller;
+   padding-left:  20px;
+   padding-top:    5px;
+   padding-bottom: 5px;
+}
+#buttonGroup {
+   padding-top:    4px;
+   padding-bottom: 0px;
+   padding-left:   4px;
+}
+
+#variationLine {
+   padding-top:     5px;
+   padding-bottom:  5px;
+   padding-left:    0px;
+}
+
+#divFullScreen {
+   padding-top:    7px;
+   padding-bottom: 12px;
+   padding-left:   2px;
+}
+
+#divEditorChk {
+   padding-top:     5px;
+   padding-bottom:  15px;
+   padding-left:    0px;
+}
+
+
+/*monospace  90%*/
+#FrameRate {
+   font-family: Helvetica, Arial, sans-serif;
+	font-size: smaller;
+
+   border-radius: 0px;
+
+   margin-left: 4px;
+   margin-top:  3px;
+   background-color: lightgray; /* #d1e0e0   */
+}
+
+#hostCanvas {
+   cursor: none; /* cursor: default; */
+   border:#008080 5px solid;
+   touch-action: none; /* prevent scrolling of the canvas on touch screens */
+}
+/* Useful for getting fullscreen on android cellphone (chrome) to NOT crop the host's canvas */
+@media screen and (orientation: landscape) and (max-device-width: 980px) {
+   #hostCanvas:-webkit-full-screen {
+      height: 100%;
+      width: auto;
+   }
+}
+@media screen and (orientation: portrait) and (max-device-width: 980px) {
+   #hostCanvas:-webkit-full-screen {
+      height: auto;
+      width: 100%;
+   }
+}
+
+#videoMirror {
+   cursor: default; /*  cursor: none; */
+   border:#008080 5px solid;
+   touch-action: none; /* prevent scrolling of the video element on touch screens */
+}
+#connectionCanvas {
+   border:gray 1px solid;
+}
+#twoThumbsCanvas {
+   cursor: default; /*  cursor: none; */
+   border:#008080 5px solid;  /* #008080 #232323 */
+   touch-action: none; /* prevent scrolling of the video element on touch screens */
+}
+
+/* last row of buttons on the client page */
+button.clientLastRow {
+   background-color: lightgray;
+   margin-left: 5px;
+   border-radius: 4px;
+   padding: 4px 0px;
+}
+#FullScreen {
+   width: 6.0em;
+}
+#twoThumbsButton {
+   width: 7.3em;
+}
+
+
+/* keep the size of Firefox buttons similar to those in Chrome */
+button::-moz-focus-inner {
+   border:0;
+   padding:0;
+}
+
+button.chat {
+   background-color: lightgray;
+   padding: 3px 4px;
+   border-radius: 4px;
+   /* width: 62px; */
+   text-align: left;
+}
+#ConnectButton {
+   width: 4.8em;
+}
+#ChatButton {
+   width: 4.8em;
+}
+
+button.main {
+   background-color: lightgray;
+   padding: 3px 4px;
+   border-radius: 4px;
+   /* width: 62px; */
+   text-align: left;
+}
+#stepper {
+   padding:  0px 4px 0px 4px;
+}
+
+button.demos {
+   background-color: lightgray;
+   padding: 4px 10px;
+   border-radius: 4px;
+   margin-left: 0px;
+   margin-right: -4px;
+}
+
+/* All the links that don't have href attributes */
+a:not([href]) {
+   cursor: pointer;
+}
+
+/* Inhibits the drawing of a focus border around buttons. Issue in Chrome. */
+button:focus {
+   outline: 0;
+}
+
+/* These apply only to the <a> elements inside the "main" div class. This is a
+   similar isolation technique to that used in the sitemap.css file. */
+div.main a         {color:black; text-decoration:underline;}
+div.main a:hover   {color:white;  text-decoration:none; background:#000000}
+
+/*
+div.main a:visited {color:black; text-decoration:underline}
+*/

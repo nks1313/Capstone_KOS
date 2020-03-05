@@ -1,0 +1,85 @@
+﻿/*
+Based how-to example:
+http://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp
+*/
+
+   .overlay {
+      height: 0%; /* The overlay pulls down. This must start at 0. */
+      width: 100%;
+      position: fixed;
+      z-index: 1;  /* rendering stack; higher numbers are on top. */
+      top: 0;
+      left: 0;
+      background-color: rgb(0,0,0); /* Black fallback color */
+      background-color: rgba(0,0,0, 0.85); /* black ; */
+      overflow-y: hidden;
+      transition: 0.5s;
+   }
+
+   .overlay-content {
+      position: relative;
+      top: 4%; /* Note that this can affect the bottom part of the selection area for the close icon. */
+      text-align: left;
+   }
+
+   /* Apply to the "a" elements inside the overlay */
+   .overlay a {
+      padding: 3px;
+      text-decoration: none;
+      font-size: 26px;
+      color: #b37700; /* #818181; */
+      /* display: block; */
+      transition: 0.2s;
+   }
+   
+   /* No bullets in the site map list */
+   .overlay ul, .overlay li {
+      list-style-type: none;
+   }
+   /* Spacing between list items */
+   .overlay li {
+      /*      top R/L bottom  */
+      margin: 0px 0px 7px;
+   }
+   
+   /* Apply to the "a:hover" AND "a:focus" elements inside the overlay. Notice the comma here */
+   .overlay a:hover, .overlay a:focus {
+      color: #ffdd99; /* #f1f1f1; */
+   }
+
+   /* Apply to any element with the closebtn class that is inside the overlay  */
+   .overlay .closebtn {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      font-size: 45px;
+   }
+   
+   /* This gets changed by the small-screen test below. */
+   .menuicon {position: fixed;}
+
+   /* Styles that take effect for small screens. Commas are effectively an OR operator. */
+   @media screen and (orientation: landscape) and (max-device-width: 980px) {
+      /* body {background-color: lightgreen;} */
+      .menuicon {position: relative;} /* This keeps the menu icon at the top */
+      .overlay {overflow-y: auto;}
+      .overlay a {font-size: 18px} /* This is smaller */
+      .overlay .closebtn {
+         top: 0px;
+         right: 0px;
+         font-size: 35px;
+      }
+      .overlay-content {top: 6%;} /* Note that this can affect the bottom part of the selection area for close icon. */
+   }
+   
+   /* Like the one above but for portrait orientation. */
+   @media screen and (orientation: portrait) and (max-device-width: 980px) {
+      /* body {background-color: lightblue;} */
+      .menuicon {position: relative;} /* This keeps the menu icon at the top */
+      .overlay {overflow-y: auto;}
+      .overlay a {font-size: 30px} /* This is larger */
+      .overlay .closebtn {
+         font-size: 70px;
+      }
+      .overlay-content {top: 8%;}
+   }

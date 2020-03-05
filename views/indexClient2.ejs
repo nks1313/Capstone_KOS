@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Client for Demos</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="public/css/hostAndClient.css" />
+<style></style>
+
+<noscript>
+   <br/><br/><br/><br/><br/>
+   <p style="font-family:Helvetica; font-size:150%; color:brown;">
+   TimeToCode.org requires JavaScript.
+   <br/><br/>
+   Please enable JavaScript in your browser<br/>
+   and then reload this page.
+   </p>
+   <br/><br/><br/><br/><br/><br/><br/>
+</noscript>
+
+<script src="public/js/jquery-3.1.1.min.js"></script>
+
+<script src="public/js/math.min.js"></script>
+<!-- -->
+<script src="public/js/gwModule.js"></script>
+<script src="public/js/Box2D.js"></script>
+
+<script src="public/js/hostAndClient.js"></script>
+
+<script>
+   // After the page loads (and canvas or video element is defined)...
+   $(document).ready( function() {
+      hC.init_nonHostClients();
+      gW.adjustSizeOfChatDiv('normal');
+   });
+</script>
+
+<!--
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+-->
+<script src="adapter-latest.js"></script>
+
+</head>
+
+<body bgcolor="#EFEFEF">
+
+<div class="main">
+   <div class="containerRow">
+
+      <div class="maintext" id="multiPlayer" style="display:table-cell">
+         <div class="scroller">
+            <datalist id="nodeServerList"></datalist>
+            <span id="serverTitle">Server</span><input id="nodeServer" list="nodeServerList" value='secure-retreat-15768.herokuapp.com' title='Use the default unless you have an ip address (and port) for a local node server.'>
+            <span id="roomTitle">Room</span><input id="roomName">
+            <button id="ConnectButton" class="chat" onclick="hC.connect_and_listen('client', 'normal');" title='Initiate (or reset) the client connection.'>Connect</button>
+            </br>
+            <form id="chatForm" action="" style="display:inline;">
+               <input id="inputField" autocomplete="off" title="Use the 'Enter' key or click the button to submit a message."/>
+               <button disabled id="ChatButton" class="chat">Chat</button>
+            </form>
+          </br>
+            <canvas id="connectionCanvas" onclick="document.activeElement.blur();"></canvas><br>
+
+            <div style="display:row; font-size: 1.0em; margin-bottom: 10px; margin-top: 5px;">
+               <div style="display:inline-block;">
+                  <input type="checkbox" id="chkPlayer" autocomplete="off" title="Request a Puck-Popper player when connecting.">Player<br>
+                  <input type="checkbox" id="chkLocalCursor" autocomplete="off" title="Render the local cursor when over the video element">Local cursor
+               </div>
+               <div style="display:inline-block;">
+                  <input disabled type="checkbox" id="chkRequestStream" autocomplete="off" title="Request a video stream (or shut it off)."><span id='streamChkDesc'>Stream</span>
+                  <button disabled class="clientLastRow" id="FullScreen" title='View video element (the stream) in full-screen mode.'>Full Screen</button><br><br>
+               </div>
+               <div style="display:inline-block; float:right">
+                  <button disabled class="clientLastRow" id="twoThumbsButton" title='Multi-touch interface controlled with two thumbs'>Two Thumbs</button>
+               </div>
+            </div>
+
+            <ul id="messages"></ul>
+         </div>
+      </div>
+
+      <!-- A placeholder, mainly to keep things similar to the host page. -->
+      <div class="maintext" id="ttcIntro" style="display:none">
+      </div>
+
+      <!-- The display elements -->
+      <div class="clientVideo">
+         <video autoplay id="videoMirror" width="600" height="600" onclick="document.activeElement.blur();"></video>
+         <canvas hidden id="twoThumbsCanvas" width="600" height="600" onclick="document.activeElement.blur();"></canvas>
+      </div>
+
+      <!-- Hidden control that is sometimes used in testing... -->
+      <div class="controls" id="controlsDiv">
+         <span hidden><input type="checkbox" id="chkTwoThumbs" autocomplete="off" title="Multi-touch interface controlled by two thumbs">Two Thumbs<br></span>
+      </div>
+
+   </div>
+</div>
+
+</body>
+</html>

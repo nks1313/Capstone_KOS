@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>KOS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="public/css/main.css" />
+    <script type="text/javascript">
+        function myGame() {
+            var path = String.fromCharCode(34)+'C:\\Users\\remote\\TestClientViewer.exe'+String.fromCharCode(34) ;
+            //alert(path);
+            var WshShell = new ActiveXObject("WScript.Shell");
+            WshShell.Run(path);
+        }
+    </script>
+	</head>
+	<body class="is-preload">
+
+		<% include ./header.ejs %>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1>EOS 기반 클라우드 게이밍 플랫폼</h1>
+					<p>저사양 컴퓨터로 고사양 게임을 즐겨보세요!<br/>
+						<div id="menu2">
+							<ul>
+								<li><a href="/" accesskey="1" title="">Homepage</a></li>
+								<li class="current_page_item"><a href="game" accesskey="4" title="">GAME</a></li>
+								<% if(user){%>
+									<li><a href="/logout" accesskey="5" title="">LOGOUT</a></li>
+									<br><br>
+									<li><%= user.name %>님 반갑습니다!</li>
+								<%} else{ %>
+									<li><a href="login" accesskey="2" title="">로그인</a></li>
+									<li><a href="signup" accesskey="3" title="">회원가입</a></li>
+								<%} %>
+							</ul>
+						</div>
+					</p>
+				</div>
+
+				<video autoplay loop muted playsinline src="images/battle.mp4"></video>
+			</section>
+
+		<!-- Highlights -->
+<div class="col-6 col-12-xsmall">
+<button onclick="location.href='/pricetable'" class="primary" width="100"height="50">이용요금확인</button><br>
+    </div>
+
+<div class="icongrid">
+ <% if(user){%>
+
+  <div>
+  <img src="/public/images/apex_icon.png" alt="game_icon" width="100" height="150">
+ <form method="post" action="/playgame"><input type="submit" class="primary" value="Play this game" width="100" height="50"><input type="hidden" name="gamename" id="gamename" value="apex"/><input type="hidden" name="cost" id="cost" value="0.0001 EOS"/></form>
+ </div>
+  <div><img src="/public/images/autochess_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/dota2_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/fortnite_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/gta5_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/hearthstone_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/lol_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/overwatch_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/pubg_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/starcraft2_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/wow_icon.png" alt="game_icon" width="100" height="150"></div>
+
+<%} else{ %>
+
+  <div><img src="/public/images/pubg_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/starcraft2_icon.png" alt="game_icon" width="100" height="150"></div>
+  <div><img src="/public/images/wow_icon.png" alt="game_icon" width="100" height="150"></div>
+    <div>이외에 더 많은 게임이 있습니다.<br>
+        <button onclick="location.href='/signup'" class="primary" width="100" height="50">가입하고 게임을 즐기세요</button>
+    </div>
+
+
+<%} %>
+</div>
+    <div class="clear"></div>
+    </div>
+
+		<!-- Footer -->
+		<% include ./footer.ejs %>
+
+		<!-- Scripts -->
+		<% include ./scripts.ejs %>
+
+	</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<% include ./index_header.ejs %>
+	</head>
+	<body class="is-preload">
+
+		<% include ./header.ejs %>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1>EOS 기반 클라우드 게이밍 플랫폼</h1>
+					<p>저사양 컴퓨터로 고사양 게임을 즐겨보세요!<br/>
+						<div id="menu2">
+							<ul>
+								<li class="current_page_item"><a href="/" accesskey="1" title="">Homepage</a></li>
+								<li><a href="game" accesskey="4" title="">GAME</a></li>
+								<% if(user){%>
+									<li><a href="/logout" accesskey="5" title="">LOGOUT</a></li>
+									<br><br>
+									<li><%= user.name %>님 반갑습니다!</li>
+								<%} else{ %>
+									<li><a href="login" accesskey="2" title="">로그인</a></li>
+									<li><a href="signup" accesskey="3" title="">회원가입</a></li>
+								<%} %>
+							</ul>
+						</div>
+					</p>
+				</div>
+
+				<video autoplay loop muted playsinline src="images/battle.mp4"></video>
+			</section>
+
+		<!-- Highlights -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>저사양 컴퓨터로 고사양 게임을 즐겨보세요</h2>
+						<p></p>
+						<h3>교수님 소개</h3>
+					</header>
+					<div class="highlights">
+						<section>
+							<div class="content">
+								<header>
+									<div class="author">
+										<div class="image"><img src="public/images/demo/kimsw.png" alt=""></div>
+										<h3>김성환</h3>
+									</div>
+								</header>
+								<p>연구분야 : 무선 멀티미디어, 컴퓨터게임<br>
+						연구실 : 정보기술관 19-310호<br>
+						전화번호 : 02-6490-2450<br>
+						E-mail : swkim7@uos.ac.kr<br>
+						Homepage : http://mobile.uos.ac.kr<br></p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<div class="author">
+										<div class="image"><img src="public/images/demo/choi-hyuck.png" alt=""></div>
+										<h3>최혁</h3>
+									</div>
+								</header>
+								<p>연구분야 : Digital Watermarking, DRM(Digital Right Management)<br>
+						연구실 : 정보기술관 19-311호<br>
+						전화번호 : 02-6490-2452<br></p>
+							</div>
+						</section>
+						<!--<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
+									<h3>Ipsum consequat</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-line-chart"><span class="label">Icon</span></a>
+									<h3>Interdum gravida</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-paper-plane-o"><span class="label">Icon</span></a>
+									<h3>Faucibus consequat</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-qrcode"><span class="label">Icon</span></a>
+									<h3>Accumsan viverra</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
+						</section>-->
+					</div>
+				</div>
+			</section>
+
+		<!-- CTA -->
+			<!-- <section id="cta" class="wrapper">
+				<div class="inner">
+					<h2>Curabitur ullamcorper ultricies</h2>
+					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
+				</div>
+			</section>-->
+
+		<!-- Testimonials -->
+			<section class="wrapper">
+				<div class="inner">
+					<!--<header class="special">
+						<h2>Faucibus consequat lorem</h2>
+						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
+					</header>-->
+					<h3 style="text-align: center">개발인원</h3>
+					<div class="testimonials">
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>University of Seoul<br>
+									Computer Science<br></p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="public/images/demo/kyj.png" alt="" />
+									</div>
+									<p class="credit">- <strong>Kim Yong-Joon</strong> <span>2013920017</span></p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>University of Seoul<br>
+									Computer Science<br></p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="public/images/demo/nks.png" alt="" />
+									</div>
+									<p class="credit">- <strong>Noh Ki-Seon</strong> <span>2013920022</span></p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>University of Seoul<br>
+									Computer Science<br></p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="public/images/demo/ljb.png" alt="" />
+									</div>
+									<p class="credit">- <strong>Lim Jong-Beom</strong> <span>2013920054</span></p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>University of Seoul<br>
+									Computer Science<br></p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="public/images/demo/jws.png" alt="" />
+									</div>
+									<p class="credit">- <strong>Jang Won-Suck</strong> <span>2013920055</span></p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+		<% include ./footer.ejs %>
+
+		<!-- Scripts -->
+		<% include ./scripts.ejs %>
+
+	</body>
+</html>
