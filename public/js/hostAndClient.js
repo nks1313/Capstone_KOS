@@ -981,6 +981,7 @@ var hC = (function() {
          if (hostOrClient == 'host') {
             socket.emit('roomJoin', JSON.stringify({'hostOrClient':hostOrClient,'roomName':roomName}));
 
+
          } else if (hostOrClient == 'client') {
             socket.emit('roomJoin', JSON.stringify({'hostOrClient':hostOrClient,'roomName':roomName,
                                                     'player':chkPlayer.checked,

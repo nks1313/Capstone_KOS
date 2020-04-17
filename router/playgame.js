@@ -101,7 +101,7 @@ function setDisplayName( clientID, mode) {
 
 
 // Socket.io stuff...
-/*
+
 io.on('connection', function(socket) {
    // Example of how to parse out the query string if it is sent in the connection attempt from the client.
    console.log("");
@@ -324,7 +324,7 @@ io.on('connection', function(socket) {
       io.to( cD.room[ socket.id]).emit('command-from-host-to-all-clients', msg);
    });
 
-});*/
+});
 
 /*http.listen(port, function() {
    console.log('listening on *:' + port);
