@@ -15,7 +15,7 @@
     "eosjs": "^20.0.0",
     "eosjs-api": "^7.0.4",
     "event": "^1.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-session": "^1.16.1",
     "fs": "0.0.1-security",
     "multer": "^1.4.1",
